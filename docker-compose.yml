@@ -3,7 +3,8 @@ version: '2'
 services:
   
   eth-ganache:
-    image: trufflesuite/ganache-cli 
+    build: .
+    container_name: ganache
     ports:
       - 9545:8545
     volumes:
