@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+  
+  eth-ganache:
+    image: trufflesuite/ganache-cli 
+    ports:
+      - 9545:8545
+    volumes:
+      - ./ethereum_data:/ethereum_data
+    entrypoint:
+      - node
+      - ./build/cli.node.js
+      - -n
+      - -a=10
+      - -b=4
+      - --db=/ethereum_data
+      - --debug
+
